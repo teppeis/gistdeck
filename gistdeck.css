@@ -188,18 +188,19 @@ h2 + p img {
   margin-left: 20px !important;
 }
 
-
-
-.file img {
+.markdown-body img {
   -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(80%, transparent), to(rgba(255,255,255,0.2)));
+  max-width: 500px;
+  max-height: 500px;
 }
+
 /* code style */
 
 .file div.highlight {
   background: none !important;
   background: transparent !important;
 }
-div.highlight pre, pre, .markdown-body code {
+div.highlight pre, .markdown-body pre {
   border: 1px solid hsla(246, 13%, 45%, 0.4) !important;
   background: hsla(246, 13%, 99%, 0.6) !important;
   -webkit-border-radius: 6px !important;
@@ -210,6 +211,10 @@ div.highlight pre, pre, .markdown-body code {
 div.highlight pre, pre code, li code {
   font-size:24px !important;
   text-align: left;
+}
+.markdown-body pre code {
+  font-weight: bold;
+  font-size: 18px !important;
 }
 
 /* distribute slides */
