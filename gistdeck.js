@@ -1,3 +1,5 @@
+(function(){
+
 if (typeof(GISTDECK_CSS_URL) == "undefined")
     var GISTDECK_CSS_URL="https://gistdeck.herokuapp.com/gistdeck.css"
 $("head").append('<link rel="stylesheet" href="' + GISTDECK_CSS_URL + '" type="text/css" />');
@@ -38,3 +40,26 @@ $(document).keydown(function(e) {
 });
 
 displaySlide(0);
+
+var style = document.createElement('style');
+document.getElementsByTagName('head')[0].appendChild(style);
+var sheet;
+if (style.sheet) {
+  sheet = style.sheet;
+} else {
+  sheet = style.styleSheet;
+}
+var selector;
+selector = 'img { max-height: 500px; }';
+sheet.insertRule(selector, sheet.cssRules.length);
+selector = [
+  '.markdown-body pre code {',
+  'border: 0 !important;',
+  'background: transparent !important;',
+  'border-radius: 0 !important;',
+  'font-weight: bold;',
+  'font-size: 18px !important;',
+  '}'].join('');
+sheet.insertRule(selector, sheet.cssRules.length);
+
+})();
